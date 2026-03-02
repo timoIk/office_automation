@@ -1,4 +1,3 @@
-from pathlib import Path
 
 from pydantic_settings import BaseSettings
 
@@ -15,6 +14,11 @@ class Settings(BaseSettings):
 
     # Database
     database_url: str = "sqlite:///data/office_automation.db"
+
+    # RPA
+    rpa_enabled: bool = True
+    rpa_poll_interval_seconds: int = 10
+    customer_map_path: str = "data/customer_map.json"
 
     # Logging
     log_level: str = "INFO"

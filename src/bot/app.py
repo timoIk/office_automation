@@ -1,8 +1,15 @@
 """Telegram bot application setup."""
 
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
+from telegram.ext import (
+    ApplicationBuilder,
+    CallbackQueryHandler,
+    CommandHandler,
+    MessageHandler,
+    filters,
+)
 
 from src.bot.handlers import (
+    callback_handler,
     document_handler,
     help_handler,
     photo_handler,
@@ -29,5 +36,8 @@ def create_bot_app():
     # Message handlers
     app.add_handler(MessageHandler(filters.PHOTO, photo_handler))
     app.add_handler(MessageHandler(filters.Document.PDF, document_handler))
+
+    # Callback handler for inline keyboard buttons
+    app.add_handler(CallbackQueryHandler(callback_handler))
 
     return app

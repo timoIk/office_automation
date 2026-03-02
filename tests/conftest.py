@@ -1,6 +1,5 @@
 """Shared test fixtures."""
 
-import os
 
 import pytest
 from sqlalchemy import create_engine

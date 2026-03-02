@@ -19,6 +19,7 @@ dependencies = [
 rpa = [
     "pywinauto>=0.6.8",
     "pyautogui>=0.9.54",
+    "pyperclip>=1.8.0",
 ]
 dev = [
     "pytest>=8.0",

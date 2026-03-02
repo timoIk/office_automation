@@ -80,5 +80,7 @@ class AccountModel(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     account_number: Mapped[str] = mapped_column(String(10), nullable=False, unique=True)
     account_name: Mapped[str] = mapped_column(String(255), nullable=False)
-    account_type: Mapped[str] = mapped_column(String(50), nullable=False)  # Aktiv, Passiv, Aufwand, Ertrag
+    account_type: Mapped[str] = mapped_column(
+        String(50), nullable=False
+    )  # Aktiv, Passiv, Aufwand, Ertrag
     parent_number: Mapped[str | None] = mapped_column(String(10), nullable=True)
